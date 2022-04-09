@@ -1,0 +1,230 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IMC.Clases
+{
+    public class CLSIMC
+    {
+        private const double KG = 2.2046;
+        public string Nombre { get; set; }
+        public int edad { get; set; }
+        public int altura { get; set; }
+        public char genero { get; set; }
+        public int peso { get; set; }
+        public double imc { get; set; }
+
+        public String Prueba()
+        {
+            this.Nombre = "Jesús";
+            this.edad = 20;
+            this.altura = 168;
+            this.genero = 'M';
+            this.peso = 130;
+
+            double pesoKG = this.peso / KG;
+            double estaturaMts = (double)this.altura / 100;
+            double altu = (Math.Pow(estaturaMts, 2));
+            this.imc = pesoKG / altu;
+            return this.imc.ToString();
+        }
+
+        public string PesoEdadGenero()
+        {
+
+            string mensaje = "";
+
+            if (edad > 18)
+            {
+                //Adulto
+                if (genero == 'M')
+                {
+                    
+                    if (imc < 20)
+                    {
+                        mensaje = "\nEres Hombre y estas desnutrido, tienes que comer más";
+
+                    }
+                    else if (imc > 20 && imc < 24.9)
+                    {
+                        mensaje = "\nEres Hombre y estas Normal";
+
+                    }
+                    else if (imc > 25 && imc < 29.9)
+                    {
+                        mensaje = "\nEres Hombre y tienes sobre peso, no comas tanto";
+
+                    }
+                    else if (imc > 30 && imc < 40)
+                    {
+                        mensaje = "\nEres Hombre y tienes obecidad, deja de comer, o come algo más sano";
+
+                    }
+                    else if (imc >= 40)
+                    {
+                        mensaje = "\nEres Hombre y tienes obecidad grabe, tienes que hacer dieta o vas a explotar";
+
+                    }
+                }
+
+                if (genero == 'F')
+                {
+
+                    if (imc < 19)
+                    {
+                        mensaje = "\nEres Mujer y estas desnutrido, tienes que comer más";
+
+                    }
+                    else if (imc > 18 && imc < 24)
+                    {
+                        mensaje = "\nEres Mujer y estas Normal";
+
+                    }
+                    else if (imc > 23 && imc < 28)
+                    {
+                        mensaje = "\nEres Mujer y tienes sobre peso, no comas tanto";
+
+                    }
+                    else if (imc > 26 && imc < 33)
+                    {
+                        mensaje = "\nEres Mujer y tienes obecidad, deja de comer, o come algo más sano";
+
+                    }
+                    else if (imc >= 33)
+                    {
+                        mensaje = "\nEres Mujer y tienes obecidad grabe, tienes que hacer dieta o vas a explotar";
+
+                    }
+                }
+                
+            }
+
+
+            if (edad >= 4 && edad <= 12)
+            {
+                //Niño
+                if (genero == 'M')
+                {
+
+                    if (imc <= 14.2)
+                    {
+                        mensaje = "\nEres un niño y estas desnutrido, tienes que comer más";
+
+                    }
+                    else if (imc >= 14.3 && imc <= 19.3)
+                    {
+                        mensaje = "\nEres un niño y estas Normal";
+
+                    }
+                    else if (imc >= 19.4 && imc <= 21)
+                    {
+                        mensaje = "\nEres un niño y tienes sobre peso, diles a tus padres que te den algo más saludable";
+
+                    }
+                    else if (imc >= 23.4)
+                    {
+                        mensaje = "\nEres un niño y tienes obecidad, niño diles a tus padres que paren de darte tanta comida, es malo para tu salud";
+
+                    }
+                    
+                }
+
+                if (genero == 'F')
+                {
+
+                    if (imc <= 14)
+                    {
+                        mensaje = "\nEres una niña y estas desnutrido, tienes que comer más";
+
+                    }
+                    else if (imc >= 14.1 && imc <= 19.9)
+                    {
+                        mensaje = "\nEres una niña y estas Normal";
+
+                    }
+                    else if (imc >= 20 && imc <= 22.9)
+                    {
+                        mensaje = "\nEres una niña y tienes sobre peso, diles a tus padres que te den algo más saludable";
+
+                    }
+                    else if (imc >= 23)
+                    {
+                        mensaje = "\nEres una niña y tienes obecidad, niña diles a tus padres que paren de darte tanta comida, es malo para tu salud";
+
+                    }
+                    
+                }
+
+            }
+
+
+            if (edad >= 13 && edad <= 17)
+            {
+                //Adolecente
+                if (genero == 'M')
+                {
+
+                    if (imc <= 16.5)
+                    {
+                        mensaje = "\nEres un adolecente baron y estas desnutrido, tienes que comer más";
+
+                    }
+                    else if (imc >= 16.6 && imc <= 23.3)
+                    {
+                        mensaje = "\nEres un adolecente baron y estas Normal";
+
+                    }
+                    else if (imc >= 23.4 && imc <= 26.7)
+                    {
+                        mensaje = "\nEres un adolecente baron y tienes sobre peso, patojo no comas mucho";
+
+                    }
+                    else if (imc >= 26.8)
+                    {
+                        mensaje = "\nEres un adolecente baron y tienes obecidad, Voz patojo deja de comer tanto, vaz a explotar";
+
+                    }
+
+                }
+
+                if (genero == 'F')
+                {
+
+                    if (imc <= 16.3)
+                    {
+                        mensaje = "\nEres una adolecente mujer y estas desnutrido, tienes que comer más";
+
+                    }
+                    else if (imc >= 16.4 && imc <= 23.9)
+                    {
+                        mensaje = "\nEres una adolecente mujer y estas Normal";
+
+                    }
+                    else if (imc >= 24 && imc <= 27.9)
+                    {
+                        mensaje = "\nEres una adolecente mujer y tienes sobre peso, patoja no comas mucho";
+
+                    }
+                    else if (imc >= 28)
+                    {
+                        mensaje = "\nEres una adolecente mujer y tienes obecidad, Voz patoja deja de comer tanto, vaz a explotar";
+
+                    }
+
+                }
+
+            }
+
+            return mensaje;
+        }
+
+
+        public override string ToString()
+        {
+            String retorno = $" Nombre: {Nombre}\n Edad: {edad}\n Genero: {genero}\n Altura: {altura}\n peso: {peso}\n imc: {imc}";
+            return retorno;
+        }
+    }
+}
