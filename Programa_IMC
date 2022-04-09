@@ -1,0 +1,10 @@
+using IMC.Clases;
+
+CLSIMC im = new CLSIMC();
+string mensaje;
+
+im.Prueba();
+Console.WriteLine(im.ToString());
+
+mensaje = im.PesoEdadGenero();
+Console.WriteLine(mensaje);
